@@ -1,9 +1,10 @@
 import { useDispatch } from 'react-redux'
+import { FormEvent, useState } from 'react'
 import * as S from './styles'
 import { fecharFormulario } from '../../store/reducers/form'
 import { BotaoSalvar } from '../../styles'
-import { FormEvent, useState } from 'react'
 import { cadastrar } from '../../store/reducers/contatos'
+import InputMask from 'react-input-mask'
 
 const Formulario = () => {
   const [nome, setNome] = useState('')
@@ -50,10 +51,11 @@ const Formulario = () => {
             type="email"
             placeholder="Email"
           />
-          <input
+          <InputMask
+            mask="(99) 99999-9999"
             value={telefone}
             onChange={({ target }) => setTelefone(target.value)}
-            type="number"
+            type="text"
             placeholder="Número"
           />
           <BotaoSalvar type="submit">Cadastrar</BotaoSalvar>

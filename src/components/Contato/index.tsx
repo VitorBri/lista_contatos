@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import * as S from './styles'
 
-import { remover, editar } from '../../store/reducers/contatos'
 import ContatoClass from '../../models/Contato'
+import { remover, editar } from '../../store/reducers/contatos'
 import { BotaoSalvar } from '../../styles'
+import InputMask from 'react-input-mask'
 
 type Props = ContatoClass
 
@@ -49,8 +50,9 @@ const Contato = ({
       </p>
       <p>
         Telefone:{' '}
-        <input
-          type="number"
+        <InputMask
+          mask="(99) 99999-9999"
+          type="text"
           disabled={!estaEditando}
           value={telefone}
           onChange={(evento) => setTelefone(evento.target.value)}

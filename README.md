@@ -1,46 +1,93 @@
-# Getting Started with Create React App
+# Gerenciador de Contatos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Uma aplicação simples para gerenciar contatos, permitindo cadastrar, editar e remover contatos. Desenvolvido com React, Redux Toolkit, TypeScript e Styled Components.
 
-## Available Scripts
+## Funcionalidades
 
-In the project directory, you can run:
+- **Listar contatos**: Exibe todos os contatos cadastrados.
+- **Cadastrar contatos**: Adiciona novos contatos à lista.
+  - **Campos obrigatórios**: Nome, e-mail e telefone.
+  - **Validação**: O campo de telefone é formatado automaticamente com máscara `(99) 99999-9999`.
+- **Editar contatos**: Permite atualizar as informações de um contato existente.
+  - **Campos editáveis**: E-mail e telefone.
+- **Remover contatos**: Exclui um contato da lista.
 
-### `npm start`
+## Tecnologias Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- React
+- Redux Toolkit
+- TypeScript
+- Styled Components (para estilização)
+- `react-input-mask` (para formatar o campo de telefone)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Estrutura de Estilos
 
-### `npm test`
+- **Estilos Globais**:
+  - Define a fonte padrão como `Roboto`.
+  - Remove margens, paddings e estilos de lista padrão.
+  - Remove as setas de incremento/decremento dos inputs do tipo `number`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Container**:
+  - Centralizado com largura máxima de `768px`.
+  - Fundo branco, padding e bordas arredondadas.
 
-### `npm run build`
+- **Botões**:
+  - `BotaoSalvar`: Estilizado com uma cor de fundo verde, definida por uma variável.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Como Configurar
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone o repositório:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   git clone https://github.com/VitorBri/lista_contatos.git
+   cd gerenciador-contatos
+   ```
 
-### `npm run eject`
+2. Instale as dependências:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+   ```bash
+   npm install
+   ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Execute o projeto:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+   ```bash
+   npm start
+   ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+   Isso iniciará o servidor de desenvolvimento e abrirá o projeto no navegador.
 
-## Learn More
+## Estrutura do Projeto
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- `src/`:
+  - `components/`: Componentes reutilizáveis.
+  - `Contato/`: Componente para exibir e editar um contato individual.
+  - `Formulario/`: Componente para adicionar novos contatos.
+  - `containers/`: Componentes principais da aplicação.
+  - `store/`: Configuração do Redux Toolkit.
+  - `slices/`: Reducers e actions.
+  - `styles/`: Estilos globais e componentes estilizados.
+  - `variaveis.js`: Variáveis de estilo (cores, fontes, etc.).
+  - `models/`: Definições de tipos (TypeScript).
+  - `App.tsx`: Componente principal da aplicação.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Como Usar
+
+- **Adicionar um contato**:
+  1. Clique no botão "Adicionar Contato".
+  2. Preencha o formulário com nome, e-mail e telefone.
+  3. Clique em "Cadastrar" para salvar ou "X" para fechar o formulário.
+
+- **Editar um contato**:
+  1. Clique no botão "Editar" ao lado do contato.
+  2. Atualize as informações de e-mail e telefone.
+  3. Clique em "Salvar" para confirmar ou "Cancelar" para descartar as alterações.
+
+- **Remover um contato**:
+  1. Clique no botão "Excluir" ao lado do contato.
+  2. Confirme a exclusão.
+
+## Licença
+
+Este projeto está sob a licença MIT.
+
